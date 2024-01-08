@@ -2111,19 +2111,52 @@ end
 md"Let's try a simple graph "
 
 # ╔═╡ 076bbcf2-d387-4421-88d8-74c48d612bdb
-let
-	g1=SimpleGraph(10) # vertices with no edges
-	add_vertex!(g1)
-	add_edge!(g1, 3, 11)
-	# g2=SimpleDiGraph(10)
-	graphplot(g1, names=1:11, 
+function generateRandomGraph(n,c=5)
+	g = SimpleGraph(n)
+	m = Int(n//2)+1
+	v1 = rand(1:m,c)
+	v2 = rand(1:n,c)
+	# length.([v1,v2])
+	for i ∈ 1:c
+		add_edge!(g,v1[i],v2[i])
+	end
+	g
+end
+
+# ╔═╡ 1121ff38-a9af-49cd-a067-fe48ff02d861
+begin
+	smplGraph = generateRandomGraph(10,10)
+	# =SimpleGraph(10) # vertices with no edges
+	# add_vertex!(smplGraph)
+	# add_edge!(smplGraph, 3, 11)
+	# # g2=SimpleDiGraph(10)
+	graphplot(smplGraph, names=1:10, 
 		markersize = 0.4,
 		curvature_scalar=0.1)
+	
 end
+
+# ╔═╡ b9775f8b-4515-4727-8001-b450d1ac14e0
+dijkstra_shortest_paths(smplGraph,2)
+
+# ╔═╡ 950c6ecc-ff34-4016-a5b9-cb927494a97a
+Matrix(adjacency_matrix(smplGraph))
+
+# ╔═╡ 515f9db1-7cca-47a8-b2d9-da7959aa4833
+begin
+	elist = [(1,2),(2,3),(2,4),(3,4),(4,1),(1,5)]
+	
+	g2 = SimpleGraph(Graphs.SimpleEdge.(reverse.(elist)))
+	graphplot(g2,names=1:vertices(g2)[end])
+	reverse.(elist)
+end
+
+# ╔═╡ 06ac3b4b-5ddd-4dac-96f7-788bd3adecec
+cycle_basis(g2)
 
 # ╔═╡ a20392d7-5324-458c-9afe-2a5f3f010d6a
 md"""
-# Data Scince
+# Data Science
 
 We start with loading the required packages and reading in the `CSV` file to a `DataFrame`:
 ```julia
@@ -5225,7 +5258,12 @@ version = "1.4.1+1"
 # ╟─c16a6c92-d779-434b-8e13-d6cb422a6760
 # ╟─4723a677-f11b-4506-bc3d-bc77bc260b64
 # ╟─12d51ec0-c678-4eab-8802-babc1b00a2f6
-# ╟─076bbcf2-d387-4421-88d8-74c48d612bdb
+# ╠═076bbcf2-d387-4421-88d8-74c48d612bdb
+# ╠═1121ff38-a9af-49cd-a067-fe48ff02d861
+# ╠═b9775f8b-4515-4727-8001-b450d1ac14e0
+# ╠═950c6ecc-ff34-4016-a5b9-cb927494a97a
+# ╠═515f9db1-7cca-47a8-b2d9-da7959aa4833
+# ╠═06ac3b4b-5ddd-4dac-96f7-788bd3adecec
 # ╟─a20392d7-5324-458c-9afe-2a5f3f010d6a
 # ╠═efe9c0cf-b40d-4078-809a-a3b9650e91b2
 # ╠═4f0f43e0-14e4-40ed-834f-7638d7ca4281
