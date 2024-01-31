@@ -100,13 +100,6 @@ $(Resource("https://raw.githubusercontent.com/Datseris/whyjulia-manifesto/main/s
 
 """
 
-# ╔═╡ 6918661b-0faa-4b72-a9de-4972212fc298
-# ╠═╡ disabled = true
-#=╠═╡
-
-x = 1
-  ╠═╡ =#
-
 # ╔═╡ ae660ecd-936d-40ba-a670-efceb73951c5
 # Variable names can include practically any Unicode character. Even using LaTeX syntax
 σ = 5 # type \sigma and then tab!
@@ -139,7 +132,7 @@ y = 'ض'
 z = 4;
 
 # ╔═╡ 29931025-7a79-403b-8710-03a8c65918d5
-"The value of the crying face (🐱) is $(🐱)"
+"The value of the cat (🐱) is $(🐱)"
 
 # ╔═╡ 9aaa0976-eca7-4388-abc3-7b1d82f072de
 "You can do math inside a string: $(cos(π) + 2)"
@@ -188,7 +181,9 @@ let
 	# Strings
 	# Characters
 	x = 1.5f0
-	typeof(x)
+	# typeof(x)
+	# y = Float32(1)
+	# typeof(y)
 	# typemax(x)
 	# typemax(Int64)
 	# eps(1.)
@@ -1751,7 +1746,7 @@ end
 md"""
 ### Example 2: Simple Pendulum
 
-We will start by solving the pendulum problem. In the physics class, we often solve this problem by small angle approximation, i.e. ``sin(θ)≈θ``, because otherwise, we get an elliptic integral which doesn't have an analytic solution. The linearized form is
+We will start by solving the pendulum problem. In the physics class, we often solve this problem by small angle approximation, i.e. ``\sin(θ)≈θ``, because otherwise, we get an elliptic integral which doesn't have an analytic solution. The linearized form is
 ```math
 \overset{\cdot\cdot}{\theta} +\frac{g}{L}\theta =0
 ```
@@ -5031,12 +5026,11 @@ version = "1.4.1+1"
 # ╟─42966cad-9c79-4804-9727-5843d3e3126a
 # ╟─2c9ef83e-b463-4ba0-a2e1-da198652c8d3
 # ╟─a66f9df2-a058-45fc-89da-3892099649c5
-# ╠═6918661b-0faa-4b72-a9de-4972212fc298
 # ╠═ae660ecd-936d-40ba-a670-efceb73951c5
 # ╟─6ba63970-331d-4849-a97c-409c34949560
 # ╠═b365be1a-613a-467a-8aa8-a7ab64dbb9f6
 # ╠═7fa6d529-b108-4ff6-b174-f7fcc894f016
-# ╠═321734c2-5478-4662-8b20-0dd2bcf6e052
+# ╟─321734c2-5478-4662-8b20-0dd2bcf6e052
 # ╠═68f4a8bf-b67e-4b55-8f5f-870d53f8f09e
 # ╠═41f71cfc-1ead-49af-9d30-a70766fe8506
 # ╠═f4f55436-1707-48a2-8d94-a8e638d36c3b
@@ -5150,7 +5144,7 @@ version = "1.4.1+1"
 # ╟─edbd6944-ebfa-4f6e-95e2-bb757a0ee1c4
 # ╟─03398b1d-42cc-4cb4-9ca3-6ce991751c1d
 # ╠═54a25523-6d51-494e-91b4-7b4e237b47a0
-# ╠═1bfbb181-a89d-45cf-8612-45d5c6c6fe6f
+# ╟─1bfbb181-a89d-45cf-8612-45d5c6c6fe6f
 # ╟─25585215-c44e-4a21-b44f-6ed805c2c36d
 # ╠═58bf8716-e5b4-49f1-b945-88a530bf1230
 # ╟─7f4d9aa4-7c60-477f-98b7-830a97e7fad6
@@ -5240,7 +5234,7 @@ version = "1.4.1+1"
 # ╠═0e5a2adf-3ffd-4fba-9e0c-e6ea098d4334
 # ╟─9b9cf2d0-7027-4dbe-9293-bced98e1ad5b
 # ╠═6573c039-32da-4144-bde2-f35afc166fe4
-# ╠═2851f98f-0ee1-4264-827d-d3f1ebe59763
+# ╟─2851f98f-0ee1-4264-827d-d3f1ebe59763
 # ╠═84e61787-8d2b-4c62-8752-1f57777bbbb8
 # ╟─ab64a9f2-6e57-4346-886f-5488c1aa328a
 # ╠═ff791ba6-25db-4538-9166-88f06de871c1
